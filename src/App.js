@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Link, Router } from "@reach/router"
 import './App.css';
+
+import Cars from './components/Cars/Cars';
+import Cadillac from './components/Cadillac/Cadillac';
+import Mustang from './components/Mustang/Mustang';
+import Camarus from './components/Camarus/Camarus';
+import Details from './components/Details/Details';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1> American Cars</h1>
+
+        <Router>
+        <Cars path="/" />
+        <Cadillac path="/cadillac" />
+        <Mustang path="/mustang" />
+        <Camarus path="/camarus" />
+        <Details path="/details" />
+      </Router>
+       
+         </header> 
       </div>
     );
   }
